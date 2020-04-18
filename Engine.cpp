@@ -37,6 +37,18 @@ HRESULT Engine::InitializeD2D(HWND m_hwnd)
     return S_OK;
 }
 
+void Engine::KeyUp(WPARAM wParam)
+{
+    // If keyup, un-set the keys flags
+    // Don't do any logic here, you want to control the actual logic in the Logic method below
+}
+
+void Engine::KeyDown(WPARAM wParam)
+{
+    // If keyup, set the keys flags
+    // Don't do any logic here, you want to control the actual logic in the Logic method below
+}
+
 void Engine::Logic(double elapsedTime)
 {
     // This is the logic part of the engine. Add your game logic here.

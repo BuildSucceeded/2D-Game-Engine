@@ -12,6 +12,8 @@ public:
 	~Engine();
 
 	HRESULT InitializeD2D(HWND m_hwnd);
+	void KeyUp(WPARAM wParam);
+	void KeyDown(WPARAM wParam);
 	void Logic(double elapsedTime);
 	HRESULT Draw();
 

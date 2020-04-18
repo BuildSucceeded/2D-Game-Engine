@@ -171,6 +171,22 @@ LRESULT CALLBACK MainApp::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM
             wasHandled = true;
             break;
 
+            case WM_KEYDOWN:
+            {
+                pMainApp->engine->KeyDown(wParam);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
+            case WM_KEYUP:
+            {
+                pMainApp->engine->KeyUp(wParam);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
             case WM_DESTROY:
             {
                 PostQuitMessage(0);
