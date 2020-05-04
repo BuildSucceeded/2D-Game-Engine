@@ -120,6 +120,23 @@ HRESULT MainApp::Initialize()
         this
     );
     hr = m_hwnd ? S_OK : E_FAIL;
+
+    // Adjust it so the client area is RESOLUTION_X/RESOLUTION_Y
+    RECT rect1;
+    GetWindowRect(m_hwnd, &rect1);
+    RECT rect2;
+    GetClientRect(m_hwnd, &rect2);
+
+    SetWindowPos(
+        m_hwnd,
+        NULL,
+        rect1.left,
+        rect1.top,
+        RESOLUTION_X + ((rect1.right - rect1.left) - (rect2.right - rect2.left)),
+        RESOLUTION_Y + ((rect1.bottom - rect1.top) - (rect2.bottom - rect2.top)),
+        NULL
+    );
+
     if (SUCCEEDED(hr))
     {
         engine->InitializeD2D(m_hwnd);
@@ -182,6 +199,46 @@ LRESULT CALLBACK MainApp::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM
             case WM_KEYUP:
             {
                 pMainApp->engine->KeyUp(wParam);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
+            case WM_MOUSEMOVE:
+            {
+                pMainApp->engine->MousePosition(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+            
+            case WM_LBUTTONUP:
+            {
+                pMainApp->engine->MouseButtonUp(true, false);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
+            case WM_LBUTTONDOWN:
+            {
+                pMainApp->engine->MouseButtonDown(true, false);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
+            case WM_RBUTTONUP:
+            {
+                pMainApp->engine->MouseButtonUp(false, true);
+            }
+            result = 0;
+            wasHandled = true;
+            break;
+
+            case WM_RBUTTONDOWN:
+            {
+                pMainApp->engine->MouseButtonDown(false, true);
             }
             result = 0;
             wasHandled = true;

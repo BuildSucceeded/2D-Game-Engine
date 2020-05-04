@@ -14,6 +14,9 @@ public:
 	HRESULT InitializeD2D(HWND m_hwnd);
 	void KeyUp(WPARAM wParam);
 	void KeyDown(WPARAM wParam);
+	void MousePosition(int x, int y);
+	void MouseButtonUp(bool left, bool right);
+	void MouseButtonDown(bool left, bool right);
 	void Logic(double elapsedTime);
 	HRESULT Draw();
 

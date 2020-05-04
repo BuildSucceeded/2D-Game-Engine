@@ -3,6 +3,7 @@
 
 #pragma comment(lib, "d2d1")
 #pragma comment(lib, "dwrite")
+#pragma comment(lib, "Windowscodecs.lib")
 
 Engine::Engine() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
 {
@@ -46,6 +47,24 @@ void Engine::KeyUp(WPARAM wParam)
 void Engine::KeyDown(WPARAM wParam)
 {
     // If keyup, set the keys flags
+    // Don't do any logic here, you want to control the actual logic in the Logic method below
+}
+
+void Engine::MousePosition(int x, int y)
+{
+    // Campture mouse position when the mouse moves
+    // Don't do any logic here, you want to control the actual logic in the Logic method below
+}
+
+void Engine::MouseButtonUp(bool left, bool right)
+{
+    // If mouse button is released, set the mouse flags
+    // Don't do any logic here, you want to control the actual logic in the Logic method below
+}
+
+void Engine::MouseButtonDown(bool left, bool right)
+{
+    // If mouse button is pressed, set the mouse flags
     // Don't do any logic here, you want to control the actual logic in the Logic method below
 }
 
