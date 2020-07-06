@@ -147,15 +147,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Demo.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="EngineBase.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="GameObjectBase.h" />
+    <ClInclude Include="Point2D.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Demo.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="EngineBase.cpp" />
+    <ClCompile Include="GameObjectBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />

@@ -2,6 +2,7 @@
 //
 
 #include "framework.h"
+#include "Settings.h"
 #include "Engine.h"
 #include "App.h"
 
