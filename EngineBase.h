@@ -2,6 +2,7 @@
 
 #include "resource.h"
 #include "Point2D.h"
+#include "EngineBase.h"
 #include "GameObjectBase.h"
 
 class EngineBase
@@ -24,6 +25,8 @@ public:
 
 	virtual void Logic(double elapsedTime);
 	HRESULT Draw();
+
+	ID2D1Bitmap* LoadImage(LPCWSTR imageFile);
 
 protected:
 	Point2D mousePosition;

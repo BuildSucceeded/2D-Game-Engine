@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Demo.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EngineBase.h" />
     <ClInclude Include="framework.h" />
@@ -160,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
-    <ClCompile Include="Demo.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EngineBase.cpp" />
     <ClCompile Include="GameObjectBase.cpp" />

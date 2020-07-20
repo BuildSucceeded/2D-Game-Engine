@@ -79,6 +79,10 @@ void MainApp::RunMessageLoop()
         }
 
         // Game logic
+        if (elapsed_secs > 0.1)
+        {
+            elapsed_secs = 0.1; // safety so it doesn't go wild
+        }
         engine->Logic(elapsed_secs);
 
         // Drawing

@@ -42,9 +42,6 @@
     <ClInclude Include="GameObjectBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Demo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -70,9 +67,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameObjectBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -26,6 +26,8 @@
 #include <sstream>
 #include <chrono>
 #include <list>
+#include <iostream>
+#include <fstream>
 
 
 template<class Interface>

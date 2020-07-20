@@ -2,6 +2,6 @@
 
 struct Point2D
 {
-	float x;
-	float y;
+	double x;
+	double y;
 };

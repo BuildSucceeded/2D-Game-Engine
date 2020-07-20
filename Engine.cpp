@@ -2,7 +2,6 @@
 #include "Settings.h"
 #include "EngineBase.h"
 #include "Engine.h"
-#include "Demo.h"
 
 Engine::Engine()
 {

@@ -2,7 +2,6 @@
 
 #include "resource.h"
 #include "EngineBase.h"
-#include "Demo.h"
 
 class Engine : public EngineBase
 {
