@@ -1,7 +1,11 @@
 # 2D Game Engine 1.0
 
-The base code for all my games so far.
+The base code for all my games so far. I use this as a startup point for my 2D game projects.
 
-I use this as a startup point for my 2D game projects.
 
-If you want to learn how to use it, join our FREE Discord server! https://discord.gg/Rt6uTeC
+How to use the the engine: https://youtu.be/cwadKetNZZI
+
+How I implemented collision detection using Separating Axis Theorem: https://youtu.be/Z6BEbB8ucWw
+
+
+If you need help using it, join our FREE Discord server! https://discord.gg/Rt6uTeC
