@@ -6,3 +6,5 @@
 #define V_SYNC false
 
 #define D2D_BACKGROUND_COLOR (D2D1::ColorF::Black)
+
+#define ENABLE_AUTO_COLLISION_DETECTION true

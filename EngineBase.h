@@ -35,6 +35,7 @@ private:
 	ID2D1Factory* m_pDirect2dFactory;
 	ID2D1HwndRenderTarget* m_pRenderTarget;
 
-	std::list<GameObjectBase*> objectList;
+	GameObjectBase* objectList[1000];
+	int noObjects = 0;
 };
 

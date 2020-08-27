@@ -3,6 +3,7 @@
 #include "Point2D.h"
 #include "EngineBase.h"
 #include "GameObjectBase.h"
+#include "Collisions.h"
 
 #pragma comment(lib, "d2d1")
 #pragma comment(lib, "dwrite")
@@ -10,6 +11,7 @@
 
 EngineBase::EngineBase() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
 {
+	srand(time(NULL));
 }
 
 EngineBase::~EngineBase()
@@ -57,21 +59,62 @@ void EngineBase::MouseButtonDown(bool left, bool right)
 void EngineBase::AddGameObject(GameObjectBase* gameObj)
 {
 	gameObj->engine = this;
-    objectList.push_back(gameObj);
+    objectList[noObjects] = gameObj;
+	noObjects++;
 }
 
 void EngineBase::RemoveGameObject(GameObjectBase* gameObj)
 {
-    objectList.remove(gameObj);
+	for (int i = 0; i < noObjects; i++)
+	{
+		if (objectList[i] == gameObj)
+		{
+			noObjects--;
+			for (int j = i; j < noObjects; j++)
+			{
+				objectList[j] = objectList[j + 1];
+			}
+			return;
+		}
+	}
 }
 
 void EngineBase::Logic(double elapsedTime)
 {
-    std::list<GameObjectBase*>::iterator iter;
-
-    for (iter = objectList.begin(); iter != objectList.end(); iter++)
-       (*iter)->Logic(elapsedTime);
+    for (int i = 0; i < noObjects; i++)
+	{
+		objectList[i]->Logic(elapsedTime);
+		if (objectList[i]->GetCollisionType() == poly)
+		{
+			objectList[i]->CalculateRotatedCollisionPolyPoints();
+		}
+	}
     
+	// Auto collision detection
+	if (ENABLE_AUTO_COLLISION_DETECTION)
+	{
+		for (int i = 0; i < noObjects; i++)
+		{
+			objectList[i]->ClearAutoCollisions();
+		}
+		for (int i = 0; i < noObjects - 1; i++)
+		{
+			if (objectList[i]->GetCollisionType() != none)
+			{
+				for (int j = i + 1; j < noObjects; j++)
+				{
+					if (objectList[j]->GetCollisionType() != none)
+					{
+						if (Collisions::ObjectsCollide(objectList[i], objectList[j]))
+						{
+							objectList[i]->AddAutoCollision(objectList[j]);
+							objectList[j]->AddAutoCollision(objectList[i]);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 HRESULT EngineBase::Draw()
@@ -88,9 +131,8 @@ HRESULT EngineBase::Draw()
 
     
 
-    std::list<GameObjectBase*>::iterator iter;
-    for (iter = objectList.begin(); iter != objectList.end(); iter++)
-        (*iter)->Draw(m_pRenderTarget);
+    for (int i = 0; i < noObjects; i++)
+		objectList[i]->Draw(m_pRenderTarget);
 
 
 
