@@ -105,14 +105,25 @@ void EngineBase::Logic(double elapsedTime)
 				{
 					if (objectList[j]->GetCollisionType() != none)
 					{
-						if (Collisions::ObjectsCollide(objectList[i], objectList[j]))
+						CollisionDetails cDet = Collisions::ObjectsCollide(objectList[i], objectList[j]);
+						if (cDet.Collides)
 						{
-							objectList[i]->AddAutoCollision(objectList[j]);
-							objectList[j]->AddAutoCollision(objectList[i]);
+							objectList[i]->AddAutoCollision(objectList[j], cDet);
+							cDet.SwapObjects();
+							objectList[j]->AddAutoCollision(objectList[i], cDet);
 						}
 					}
 				}
 			}
+		}
+	}
+
+	// Auto collision reaction
+	if (ENABLE_AUTO_COLLISION_REACTION)
+	{
+		for (int i = 0; i < noObjects; i++)
+		{
+			objectList[i]->ReactToCollisions(elapsedTime);
 		}
 	}
 }

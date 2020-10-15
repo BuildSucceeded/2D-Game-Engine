@@ -3,6 +3,7 @@
 class EngineBase;
 
 #include "resource.h"
+#include "CollisionDetails.h"
 #include "EngineBase.h"
 #include "Point2D.h"
 
@@ -30,7 +31,8 @@ public:
 	Point2D* GetRotatedCollisionPolyPoints();
 	void ClearAutoCollisions();
 	void CalculateRotatedCollisionPolyPoints();
-	void AddAutoCollision(GameObjectBase* gameObj);
+	void AddAutoCollision(GameObjectBase* gameObj, CollisionDetails cDet);
+	void ReactToCollisions(double elapsedTime);
 
 protected:
 	Point2D position;
@@ -38,6 +40,7 @@ protected:
 
 	double rotationAngle;
 	double oldRotationAngle;
+	double rotationSpeed;
 
 	// Collision detection
 	CollisionType collisionType = none;
@@ -45,7 +48,9 @@ protected:
 	Point2D collisionPolyPoints[16];
 	int noCollisionPolyPoints = 0;
 	Point2D rotatedCollisionPolyPoints[16];
-	std::list<GameObjectBase*> autoCollisionsDetected;
 
+	GameObjectBase* autoCollisionsDetected[1000];
+	CollisionDetails autoCollisionsDetails[1000];
+	int noCollisionsDetected = 0;
 };
 

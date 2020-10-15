@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CollisionDetails.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EngineBase.h" />
