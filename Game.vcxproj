@@ -151,10 +151,18 @@
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EngineBase.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="ExplosionParticle.h" />
+    <ClInclude Include="Fire.h" />
+    <ClInclude Include="FireParticle.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="GameObjectBase.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="Point2D.h" />
+    <ClInclude Include="Rain.h" />
+    <ClInclude Include="RainParticle.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="targetver.h" />
@@ -164,7 +172,15 @@
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EngineBase.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="ExplosionParticle.cpp" />
+    <ClCompile Include="Fire.cpp" />
+    <ClCompile Include="FireParticle.cpp" />
     <ClCompile Include="GameObjectBase.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="Rain.cpp" />
+    <ClCompile Include="RainParticle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />
