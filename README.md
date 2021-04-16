@@ -1,5 +1,6 @@
 # 2D Game Engine 1.0
 
+This is a basic 2D game engine and the base code for all my 2D game / youtube projects.
 
 
 🔭 Welcome to Build Succeeded! Build Succeeded is a Youtube channel for game development and other programming videos and tutorials:
