@@ -1,11 +1,15 @@
 # 2D Game Engine 1.0
 
-The base code for all my games so far. I use this as a startup point for my 2D game projects.
 
 
-How to use the engine: https://youtu.be/cwadKetNZZI
+🔭 Welcome to Build Succeeded! Build Succeeded is a Youtube channel for game development and other programming videos and tutorials:
+https://www.youtube.com/channel/UCzFsuuVeM3OoEv4V3b8h75g
 
-How I implemented collision detection using Separating Axis Theorem: https://youtu.be/ntszkDJseYQ
+💬 Do you want to learn game development using C++ and Direct2D / Direct3D together? Join my FREE Discord server:
+https://discord.gg/Rt6uTeC
 
+📫 Facebook: https://www.facebook.com/GameBuildSucceeded
 
-If you need help using it, join our FREE Discord server! https://discord.gg/Rt6uTeC
+👯 Twitter: https://twitter.com/SucceededBuild
+
+🤔 Do you want to support me? https://www.patreon.com/BuildSucceeded
